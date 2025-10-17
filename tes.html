@@ -1,93 +1,49 @@
-<div class="container">
-  <div class="content">
-    <h3>Kategori Produk</h3>
-    <div class="catalog-container">
-      
-      <div class="product-card">
-        <img src="/asset/mouse1.jpeg" alt="Produk 3">
-        <h3>Mouse</h3>
-        <button><a href="#mouse">Detail</a></button>
-      </div>
+/** mengatur gaya umum body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: #b0c8ec;
+}
 
-      <div class="product-card">
-        <img src="/asset/imgs.jpeg" alt="Produk 2">
-        <h3>Monitor</h3>
-        <button><a href="#monitor">Detail</a></button>
-      </div>
+/* mengatur bagian Header menggunakan class header */
+header {
+  background-color: #237dad;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  position: sticky; /* mengatur elemen menempel di layar saat di-scroll, dan tetap berada di dalam area kontennya */
+  top: 0px; /* Header menempel di atas layar (sticky) dan selalu tampil di depan elemen lain */
+  z-index: 1000;
+}
 
-      <div class="product-card">
-        <img src="/asset/keyboard1.jpeg" alt="Produk 1">
-        <h3>Keyboard</h3>
-        <button><a href="#keyboard">Detail</a></button>
-      </div>
+nav {
+  background-color: #125d8a;
+  display: flex;
+  justify-content: center;
+  padding: 10px; /* semua sisi (atas, kanan, bawah, kiri) diberi jarak 10 piksel secara merata */
+  top: 0px;
+}
 
-      <div class="product-card">
-        <img src="/asset/casing.jpeg" alt="Produk 4">
-        <h3>Casing</h3>
-        <button>Detail</button>
-      </div>
+nav a {
+  color: white;
+  text-decoration: none; /* Menghapus hiasan (dekorasi) teks bawaan, seperti garis bawah pada link (<a>) dll. */
+  padding: 10px 20px; /* memberi ruang di dalam elemen — atas & bawah 10px, kiri & kanan 20px */
+  margin: 5px;
+  background-color: #178ab4;
+  border-radius: 5px; /* melengkungkan sudut-sudut agak membulat */
+  transition: background-color 0.3s ease; /* membuat perubahan warna latar belakang elemen terjadi secara bertahap dan halus */
+}
 
-      <div class="product-card">
-        <img src="/asset/memori.jpeg" alt="Produk 5">
-        <h3>Memori</h3>
-        <button>Detail</button>
-      </div>
+/* digunakan untuk memberikan gaya visual pada tautan (a) di dalam elemen navigasi (nav)
+   ketika kursor diarahkan ke atasnya */
+nav a:hover {
+  background-color: #0b4470;
+}
 
-      <div class="product-card">
-        <img src="/asset/accessories.jpg" alt="Produk 5">
-        <h3>Accessories</h3>
-        <button>Detail</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<section id="mouse">
-  <div class="container">
-    <div class="content">
-      <h2>Jenis Mouse</h2>
-      <div class="catalog-container">
-        
-        <div class="product-card">
-          <img src="/asset/mouse1.jpeg" alt="Produk 3">
-          <h3>Harga : Rp.120.000</h3>
-          <button>Beli</button>
-        </div>
-
-        <div class="product-card">
-          <img src="/asset/mouse2.jpeg" alt="Produk 2">
-          <h3>Harga : Rp.170.000</h3>
-          <button>Beli</button>
-        </div>
-
-        <div class="product-card">
-          <img src="/asset/mouse3.jpeg" alt="Produk 2">
-          <h3>Harga : Rp.200.000</h3>
-          <button>Beli</button>
-        </div>
-
-        <div class="product-card">
-          <img src="/asset/mouse4.jpeg" alt="Produk 4">
-          <h3>Harga : Rp.300.000</h3>
-          <button>Beli</button>
-        </div>
-
-        <div class="product-card">
-          <img src="/asset/mouse5.jpeg" alt="Produk 5">
-          <h3>Harga : Rp.240.000</h3>
-          <button>Beli</button>
-        </div>
-
-        <div class="product-card">
-          <img src="/asset/mouse6.jpeg" alt="Produk 5">
-          <h3>Harga : Rp.120.000</h3>
-          <button>Beli</button>
-        </div>
-
-      </div>
-
-      <a href="#top">Kembali ke atas</a>
-    </div>
-  </div>
-</section>
+/* Struktur utama halaman */
+.container {
+  display: flex; /* digunakan untuk mengaktifkan Flexbox layout pada suatu elemen */
+  gap: 20px; /* jarak antar anak elemen */
+  padding: 20px;
+  margin-bottom: -25px;
+}
