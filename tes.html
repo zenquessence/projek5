@@ -1,49 +1,59 @@
-/** mengatur gaya umum body */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  background-color: #b0c8ec;
-}
-
-/* mengatur bagian Header menggunakan class header */
-header {
-  background-color: #237dad;
-  color: white;
-  padding: 8px;
-  text-align: center;
-  position: sticky; /* mengatur elemen menempel di layar saat di-scroll, dan tetap berada di dalam area kontennya */
-  top: 0px; /* Header menempel di atas layar (sticky) dan selalu tampil di depan elemen lain */
-  z-index: 1000;
-}
-
-nav {
-  background-color: #125d8a;
-  display: flex;
-  justify-content: center;
-  padding: 10px; /* semua sisi (atas, kanan, bawah, kiri) diberi jarak 10 piksel secara merata */
-  top: 0px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none; /* Menghapus hiasan (dekorasi) teks bawaan, seperti garis bawah pada link (<a>) dll. */
-  padding: 10px 20px; /* memberi ruang di dalam elemen — atas & bawah 10px, kiri & kanan 20px */
-  margin: 5px;
-  background-color: #178ab4;
-  border-radius: 5px; /* melengkungkan sudut-sudut agak membulat */
-  transition: background-color 0.3s ease; /* membuat perubahan warna latar belakang elemen terjadi secara bertahap dan halus */
-}
-
-/* digunakan untuk memberikan gaya visual pada tautan (a) di dalam elemen navigasi (nav)
-   ketika kursor diarahkan ke atasnya */
-nav a:hover {
-  background-color: #0b4470;
-}
-
-/* Struktur utama halaman */
-.container {
-  display: flex; /* digunakan untuk mengaktifkan Flexbox layout pada suatu elemen */
-  gap: 20px; /* jarak antar anak elemen */
+.sidebar {
+  flex: 1;
+  background-color: white;
   padding: 20px;
-  margin-bottom: -25px;
+  border-radius: 10px;
+  height: fit-content; 
+  /* untuk mengatur tinggi elemen agar pas dengan kontennya secara otomatis,
+     tanpa membuatnya lebih besar dari ukuran maksimum atau lebih kecil dari ukuran minimum */
+}
+
+.content {
+  flex: 3;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2); 
+  /* Memberikan efek bayangan (shadow) agar elemen tampak menonjol
+     dan terlihat sedikit mengambang di atas latar belakang */
+}
+
+/* Katalog Produk */
+.catalog-container {
+  display: flex;
+  flex-wrap: wrap; 
+  /* Menggunakan Flexbox agar elemen-elemen di dalam container turun ke baris berikutnya
+     jika ruang horizontal tidak cukup */
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.product-card {
+  width: 250px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Efek bayangan dan perbesaran saat di-hover */
+  scroll-snap-align: start; 
+  /* Membuat setiap elemen (misalnya kartu produk) menempel pada posisi rapi 
+     ketika digulir secara horizontal atau vertikal */
+}
+
+.product-card img {
+  width: 70%;
+  border-radius: 15px 15px 0 0; 
+  /* border-radius: atas-kiri atas-kanan bawah-kanan bawah-kiri */
+}
+
+.product-card h3 {
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.product-card .price {
+  color: #008CBA;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
