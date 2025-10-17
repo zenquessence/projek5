@@ -1,59 +1,44 @@
-.sidebar {
-  flex: 1;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  height: fit-content; 
-  /* untuk mengatur tinggi elemen agar pas dengan kontennya secara otomatis,
-     tanpa membuatnya lebih besar dari ukuran maksimum atau lebih kecil dari ukuran minimum */
-}
-
-.content {
-  flex: 3;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2); 
-  /* Memberikan efek bayangan (shadow) agar elemen tampak menonjol
-     dan terlihat sedikit mengambang di atas latar belakang */
-}
-
-/* Katalog Produk */
-.catalog-container {
-  display: flex;
-  flex-wrap: wrap; 
-  /* Menggunakan Flexbox agar elemen-elemen di dalam container turun ke baris berikutnya
-     jika ruang horizontal tidak cukup */
-  gap: 20px;
-  padding: 20px 0;
-}
-
-.product-card {
-  width: 250px;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* Efek bayangan dan perbesaran saat di-hover */
-  scroll-snap-align: start; 
-  /* Membuat setiap elemen (misalnya kartu produk) menempel pada posisi rapi 
-     ketika digulir secara horizontal atau vertikal */
-}
-
-.product-card img {
-  width: 70%;
-  border-radius: 15px 15px 0 0; 
-  /* border-radius: atas-kiri atas-kanan bawah-kanan bawah-kiri */
-}
-
-.product-card h3 {
-  margin: 10px 0 5px;
-  color: #333;
-}
-
-.product-card .price {
-  color: #008CBA;
-  font-weight: bold;
+.product-card button {
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
   margin-bottom: 15px;
+}
+
+.product-card button:hover {
+  background-color: #005f7f;
+}
+
+/* akan bergerak ke atas */
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+section {
+  scroll-margin-top: 120px;
+}
+
+/* Footer */
+footer {
+  background-color: #237dad;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  nav {
+    position: static;
+  }
 }
